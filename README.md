@@ -64,6 +64,13 @@ In this baseline attack, no transfer is present. We reimplement BadNets on all d
 * If not specified, trigger size is set at 2x2. Poison ratio is 1.5% (2/128). Target label is 2. 
 
 ### Usage
+```bash
+python clean_train.py gtsrb -p 1 -r 2 -d 2 -s 1 -t 2
+```
+* Dataset GTSRB.
+* Train with backdoor. Training strategy: from-scratch.
+* Trigger size: 2x2. Poison rate: 2/128 (128 is default batchsize).
+
 
 ### Results: Trigger Size
 Trigger size is very important in our project, as the key of our thinking lies in the transferability of trigger across domain. A naive guess is that big trigger will be interpreted into salient features and remain big trace in poisoned model. As shown in \[1\], single-pixel trigger is enough for performing the attack. However, it remains a question in our scope, as single pixel of perturbation is surely to be mitigated by different domain distribution. Therefore, discussions on different trigger sizes are necessary.
@@ -107,6 +114,12 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 * If not specified, trigger size is set at 2x2. Poison ratio is 1.5% (2/128). Target label is 2. Training for transfer takes 10 epoches.
 
 ### Usage
+```bash
+python transfer_learning.py gtsrb mnistm -p 1 -r 2 -s 1 -d 2 -t 2
+```
+* Source domain: GTSRB. Target domain: MNISTM.
+* Transfer learning with backdoor. Teacher model strategy: from-scratch.
+* Trigger size: 2x2. Poison rate: 2/128 (128 is default batchsize).
 
 ### Results: Influence of trigger size
 Take GTSRB to MNISTM as example:
