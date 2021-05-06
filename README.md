@@ -92,7 +92,7 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 ### Influence of trigger size
 | Take GTSRB to MNISTM as example:
 | Trigger size | 1\*1 | 2\*2 | 3\*3 | 4\*4 |
-| :-------------: |:-------------: |:-------------: | :-------------: |
+| :-------------: |:-------------: |:-------------: | :-------------: | :-------------: |
 | Original Accu(%) | 78.18 | 77.88 | 77.17 | 77.08 |
 | Atk suc rate(%) | 1.67 | 4.46 | 11.63 | 14.92 |
 
