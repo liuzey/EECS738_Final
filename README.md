@@ -30,6 +30,7 @@ As the attacker has no knowledge of the target domain, targeted attacks aiming a
 ```bash
 pip install -r requirements.txt
 ``` 
+
 ## Model Structure.
 The model adopted in this paper is a simple CNN with five convolutional layer, one intermediate linear layer and one final linear layer. It shows sufficient performance on a basic study on theese four datasets. More complex models like VGG and ResNet can be studied in exactly the same principles. The influence of model structure remains as futrue work.
 
@@ -54,7 +55,8 @@ In this baseline attack, no transfer is present. We reimplement BadNets on all d
 
 ### Paras
 
-* If not specified 
+* If not specified, trigger size is set at 2x2. Poison ratio is 1.5% (2/128). Target label is 2. 
+
 ### Usage
 
 ### Results: Trigger Size
