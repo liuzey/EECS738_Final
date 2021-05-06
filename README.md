@@ -30,8 +30,21 @@ As the attacker has no knowledge of the target domain, targeted attacks aiming a
 ```bash
 pip install -r requirements.txt
 ``` 
+## Model
+The model adopted in this paper is a simple CNN with five convolutional layer, one intermediate linear layer and one final linear layer. It shows sufficient performance on a basic study on theese four datasets. More complex models like VGG and ResNet can be studied in exactly the same principles. The influence of model structure remains as futrue work.
+
+| CNN  |
+| :-------------: |
+| Conv1(channels=32, stride=(1, 1), padding=(0, 0)), BatchNorm(32), ReLU |
+| Conv2(channels=64, stride=(2, 2), padding=(1, 1)) |
+| Conv3(channels=64, stride=(1, 1), padding=(0, 0)), BatchNorm(64), ReLU, Dropout |
+| Conv4(channels=128, stride=(2, 2), padding=(1, 1)) |
+| Conv5(channels=128, stride=(1, 1), padding=(0, 0)), BatchNorm(128), ReLU |
+| FC1(128\*5\*5, 100), ReLU |
+| FC2(100, 43) |
 
 ## Baseline Model
+* For a default setting, the 
 
 ## Atk against Transfer Learning
 
