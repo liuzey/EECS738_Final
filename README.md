@@ -90,7 +90,7 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 
 ## Atk against Transfer Learning
 ### Results: Influence of trigger size
-| Take GTSRB to MNISTM as example:
+Take GTSRB to MNISTM as example:
 | Trigger size | 1\*1 | 2\*2 | 3\*3 | 4\*4 |
 | :-------------: |:-------------: |:-------------: | :-------------: | :-------------: |
 | Original Accu(%) | 78.18 | 77.88 | 77.17 | 77.08 |
@@ -136,6 +136,7 @@ High to low. Take GTSRB as source domain:
 | Atk suc rate(%) | 7.07 | 5.42 | 0.77 |
 
 ## Notes
+* Training records are saved [here](https://github.com/liuzey/EECS738_Final/tree/main/saved_records). For transfer results, records are saved as 'SOURCE2TARGET'.
 * In some cases, it shows that the transferability of trigger is stronger when two domains are close, e.g. between CIFAR and GTSRB than CIFAR and MNISTM. This follows a rough intuition. However, this is not always the situation. Also, domain difference are not quantified in this project. We remain this as our future work.
 * For any further discussion, feel free to contact me.
 
