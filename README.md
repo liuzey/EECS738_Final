@@ -110,7 +110,6 @@ CIFAR to MNISTM
 | Original Accu(%) | 83.71 | 83.26 |
 | Atk suc rate(%)  | 26.06 | 19.48 |
 
-
 CIFAR to GTSRB
 | Strategy | Tuning | From-scratch |
 | :-------------: |:-------------: |:-------------: |
@@ -119,6 +118,17 @@ CIFAR to GTSRB
 
 
 ### Influence of label space
+Low to high. Take MNISTM as source domain:
+| Target Domain | CIFAR | GTSRB | MNIST |
+| :-------------: |:-------------: |:-------------: |:-------------: |
+| Original Accu(%) | 41.77 | 55.92 | 98.01 | 
+| Atk suc rate(%) | 31.71 | 52.30 | 78.13 | 
+
+High to low. Take GTSRB as source domain:
+| Target Domain | CIFAR | MNISTM | MNIST |
+| :-------------: |:-------------: |:-------------: |:-------------: |
+| Original Accu(%) | 45.06 | 77.39 | 97.31 |
+| Atk suc rate(%) | 7.07 | 5.42 | 0.77 |
 
 ## Notes
 * In some cases, it shows that the transferability of trigger is stronger when two domains are close, e.g. between CIFAR and GTSRB than CIFAR and MNISTM. This follows a rough intuition. However, this is not always the situation. Also, domain difference are not quantified in this project. We remain this as our future work.
