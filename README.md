@@ -44,11 +44,12 @@ The model adopted in this paper is a simple CNN with five convolutional layer, o
 | FC2(100, num_class) |
 
 ## Baseline Model
-* For a default setting, the 
+* If not specified 
 
 ## Atk against Transfer Learning
 
 ## Notes
+* In some cases, it shows that the transferability of trigger is stronger when two domains are close, e.g. between CIFAR and GTSRB than CIFAR and MNISTM. This follows a rough intuition. However, this is not always the situation. Also, domain difference are not quantified in this project. We remain this as our future work.
 * For any further discussion, feel free to contact me.
 
 ## Reference
