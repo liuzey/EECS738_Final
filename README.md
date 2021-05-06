@@ -9,13 +9,16 @@ Technically, we apply the simple trigger in Badnets [\[1\]](https://arxiv.org/pd
 As the attacker has no knowledge of the target domain, targeted attacks aiming at specific labels should be rather difficult and complex. In this project, we only perform untargeted attacks. Whenever an image correctly labelled by the model in a transfer phase gets misclassified after a trigger is attached, it is believed to be a successful attack. This may not be as fancy as targeted attacks, but follows 'no free lunch' principle in a tradeoff between attacker's ability and goals.
 
 ## Transfer Learning
+It is believed that the upper layers of a deep learning model is a good feature extractor after the model is well-trained, which shows some capability for generalization. So by freezing the first layers and tuning only the last few layers, there is potential for model to behave well on relevant or close-in-domain tasks after borrowing knwoledge from the initial task. This will save great time and efforts to train a model, especially when the model parameters are huge. Also, it will solve the problem when data is not sufficient for training a nice feature extractor in the new task.
 
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/transfer.PNG)
 
 ## Backdoor Attacks
-Backdoor attacks are a type of attacks against deep learning. In this project, we only consider the scenario where attackers can only insert malicious data into the dataset, e.g. by publishing malicious data, but not having any control over the training process. By patching a unique pattern or mark onto the image, kwown as trigger, the normal images can be trained intentionally into some specific labels to deviate from their original feature space. For example, for a image with digit 6, it is classified as 4 after it is patched with block in the corner. This is fulfiled by let model train on such images with blocks and manually label them into 4 instead of 6 as they should have been.
+Backdoor attacks are a type of attacks against deep learning. In this project, we only consider the scenario where attackers can only insert malicious data into the dataset, e.g. by publishing malicious data, but not having any control over the training process. By patching a unique pattern or mark onto the image, kwown as trigger, the normal images can be trained intentionally into some specific labels to deviate from their original feature space. For example, for a image with digit 6, it is classified as 7 after it is patched with block in the corner. This is fulfiled by let model train on such images with blocks and manually label them into 7 instead of 6 as they should have been.
 
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/backdoor.png)
+
+After such model are trained and being adopted in real-world applications, the attacker can gain access to the preassigned label whenever he wants by patching the trigger. This problem is especially disastrous in some privacy concerned cases, such as face verification.
 
 ## Datasets
 **Note that MNISTand CIFAR datasets are not needed for manual download as their resources are included in torchvision package and can be downloaded automatically. GTSRB and MNISTM should be downloaded manually. MNISTM can be downloaded [here](https://drive.google.com/drive/folders/0B_tExHiYS-0vR2dNZEU4NGlSSW8).**
