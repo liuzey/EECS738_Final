@@ -10,7 +10,11 @@ As the attacker has no knowledge of the target domain, targeted attacks aiming a
 
 ## Transfer Learning
 
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/transfer.PNG)
+
 ## Backdoor Attacks
+
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/backdoor.png)
 
 ## Datasets
 **Note that MNISTand CIFAR datasets are not needed for manual download as their resources are included in torchvision package and can be downloaded automatically. GTSRB and MNISTM should be downloaded manually. MNISTM can be downloaded [here](https://drive.google.com/drive/folders/0B_tExHiYS-0vR2dNZEU4NGlSSW8).**
@@ -131,7 +135,7 @@ Take GTSRB to MNISTM as example:
 Here we can see that bigger trigger tend to survive more in the transfer.
 
 ### Results: Influence of strategy
-In this part, we explore the influence of attack strategy, as we mentioned above, over attack success rate. The source domain is CIFAR for results as follows.
+In this part, we explore the influence of attack strategy, as we mentioned above, over attack success rate. The source domain is CIFAR for results as follows. Results shows that backdoor trained using tuning strategy has a higher survival rate after transfer.
 
 Target domain: MNIST
 | Strategy | Tuning | From-scratch |
