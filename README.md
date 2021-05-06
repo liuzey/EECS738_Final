@@ -89,6 +89,12 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 
 
 ## Atk against Transfer Learning
+### Paras
+
+* If not specified, trigger size is set at 2x2. Poison ratio is 1.5% (2/128). Target label is 2. Training for transfer takes 10 epoches.
+
+### Usage
+
 ### Results: Influence of trigger size
 Take GTSRB to MNISTM as example:
 | Trigger size | 1\*1 | 2\*2 | 3\*3 | 4\*4 |
@@ -118,6 +124,18 @@ Target domain: GTSRB
 | :-------------: |:-------------: |:-------------: |
 | Original Accu(%) | 66.07 | 63.14 |
 | Atk suc rate(%)  | 56.78 | 52.87 |
+
+Here we visualize the gradients of pixel-level regions in successfully attacked images with triggers using GradCAM. Highlighted part indicates saliency in features. Pictures shows that the gradients of attacked images in models with tuning strategy is more concentrated around triggers in the right downside corner.
+
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/original24.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/heatmap24.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/mix24.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/original24_s.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/heatmap24_s.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/mix24_s.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/original24_t.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/heatmap24_t.png)
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/mix24_t.png)
 
 
 ### Results: Influence of label space
