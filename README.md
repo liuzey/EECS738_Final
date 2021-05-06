@@ -46,6 +46,7 @@ The model adopted in this paper is a simple CNN with five convolutional layer, o
 The performance (accuracy) of this model after training for 100 iterations is shown as follows.
 
 | Datasets    | MNIST | MNISTM | CIFAR10 | GTSRB |
+| :-------------: |:-------------: |:-------------: |:-------------: |:-------------: |
 | Accuracy(%) | 99.66 | 98.65  | 98.84   | 80.15 |
 
 ## Baseline Model
