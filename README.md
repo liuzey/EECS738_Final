@@ -62,9 +62,11 @@ In this baseline attack, no transfer is present. We reimplement BadNets on all d
 ### Results: Trigger Size
 Trigger size is very important in our project, as the key of our thinking lies in the transferability of trigger across domain. A naive guess is that big trigger will be interpreted into salient features and remain big trace in poisoned model. As shown in \[1\], single-pixel trigger is enough for performing the attack. However, it remains a question in our scope, as single pixel of perturbation is surely to be mitigated by different domain distribution. Therefore, discussions on different trigger sizes are necessary.
 
-![https://github.com/liuzey/EECS738_Final/blob/main/Fig/ACC_size.png]
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/ACC_size.png)
 
-![https://github.com/liuzey/EECS738_Final/blob/main/Fig/ATK_size.png]
+![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/ATK_size.png)
+
+As shown in the graph, when trigger is over 2 pixels in size, the performance is very good and training converges very quickly. Although single-pixel attacks requires more time and behaves badly in the start, two epoches is well enough for training a poisoned model.
 
 ### Results: Poison Ratio
 To choose the poison ratio is very important. Higher poison ratio means greater attack performance along with greater influence on model functioning in certain iterations and greater potential being noticed by user. Here results are shown for different poison ratio in from-scratch strategy over a complete training phase. ACC for model accuracy over clean data, and ATK for attack success rate over data with triggers.
