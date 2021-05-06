@@ -13,13 +13,23 @@ As the attacker has no knowledge of the target domain, targeted attacks aiming a
 ## Backdoor Attacks
 
 ## Datasets
-**Note that MNIST, GTSRB and CIFAR datasets are not needed for manual download as their resources are included in torchvision package and can be downloaded automatically. MNISTM can be downloaded [here](https://drive.google.com/drive/folders/0B_tExHiYS-0vR2dNZEU4NGlSSW8).**
+**Note that MNISTand CIFAR datasets are not needed for manual download as their resources are included in torchvision package and can be downloaded automatically. GTSRB and MNISTM should be downloaded manually. MNISTM can be downloaded [here](https://drive.google.com/drive/folders/0B_tExHiYS-0vR2dNZEU4NGlSSW8).**
 * [Modified National Institute of Standards and Technology database (MNIST)](http://yann.lecun.com/exdb/mnist/). This is possibly one of the most commonly-used and simplest dataset in image tasks in machine learning, which combines with different images of hand-written digits. The sizes of training dataset and testing dataset are 60,000 and 10,000 each. Though the attached webpage link seems not to be working, the dataset can be directly accessed by package [python-mnist](https://github.com/sorki/python-mnist). Images and grey-scale with a size of 28\*28 each. Ten labels in total range from 0, 1, 2... to 9. 
 * [The German Traffic Sign Recognition Benchmark (GTSRB)](https://benchmark.ini.rub.de/gtsrb_dataset.html). This is a more challenging dataset with images of traffic signs captured in real street views. Each image contains exactly one traffic sign, usually located right at the middle. There are 43 labels in total, representing different types of traffic signs, and more than 50,000 samples. Recognition of these signs is much more difficult and practically significant, as many of the signs have similar shapes and colors. 
-* [MNIST-M](http://yaroslav.ganin.net/): Colorful MNIST handwritten digits images with diverse background. This serves as a close domain to MNIST in this project. 
+* [MNIST-M](http://yaroslav.ganin.net/): Colored MNIST handwritten digits images with diverse background. This serves as a close but 'advanced' domain to MNIST in this project. 
 * [CIFAR](https://www.cs.toronto.edu/~kriz/cifar.html): This dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images. These images are ten categories of different objects in real-world scenes, which includes airplanes, automobiles, birds, cats, deer, dogs, frogs, horses, ships and trucks. This is usually considered as the most tough task among these four listed.
 
-## Environment Setup
+## Setup
+### Environment
+* Python 3.9
+* MacOS or Linux
+
+### Package
+* Recommend setting up a virtual environment. Different versions of packages may cause unexpected failures.
+* Install packages in **requirements.txt**.
+```bash
+pip install -r requirements.txt
+``` 
 
 ## Baseline Model
 
