@@ -30,21 +30,32 @@ As the attacker has no knowledge of the target domain, targeted attacks aiming a
 ```bash
 pip install -r requirements.txt
 ``` 
-## Model
+## Model Structure.
 The model adopted in this paper is a simple CNN with five convolutional layer, one intermediate linear layer and one final linear layer. It shows sufficient performance on a basic study on theese four datasets. More complex models like VGG and ResNet can be studied in exactly the same principles. The influence of model structure remains as futrue work.
 
 | CNN  |
 | :-------------: |
-| Conv1(channels=32, stride=(1, 1), padding=(0, 0)), BatchNorm(32), ReLU |
+| Conv1(channels=32, stride=(1, 1), padding=(0, 0)), BatchNorm(32), Maxpooling(2,2), ReLU |
 | Conv2(channels=64, stride=(2, 2), padding=(1, 1)) |
-| Conv3(channels=64, stride=(1, 1), padding=(0, 0)), BatchNorm(64), ReLU, Dropout |
+| Conv3(channels=64, stride=(1, 1), padding=(0, 0)), BatchNorm(64), Dropout, Maxpooling(2,2), ReLU |
 | Conv4(channels=128, stride=(2, 2), padding=(1, 1)) |
-| Conv5(channels=128, stride=(1, 1), padding=(0, 0)), BatchNorm(128), ReLU |
-| FC1(128\*5\*5, 100), ReLU |
+| Conv5(channels=128, stride=(1, 1), padding=(0, 0)), BatchNorm(128), Dropout, Maxpooling(2,2), ReLU |
+| FC1(128\*2\*2, 100), BatchNorm(100), ReLU |
 | FC2(100, num_class) |
 
+The performance (accuracy) of this model after training for 100 iterations is shown as follows.
+
+| Datasets    | MNIST | MNISTM | CIFAR10 | GTSRB |
+| Accuracy(%) | 99.66 | 98.65  | 98.84   | 80.15 |
+
 ## Baseline Model
+### Paras
+
 * If not specified 
+### Usage
+
+### Results
+
 
 ## Atk against Transfer Learning
 
