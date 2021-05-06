@@ -50,12 +50,26 @@ The performance (accuracy) of this model after training for 100 iterations is sh
 | Accuracy(%) | 99.66 | 98.65  | 98.84   | 80.15 |
 
 ## Baseline Model
+In this baseline attack, no transfer is present. We reimplement BadNets on all datasets and show some preliminary results.
+
 ### Paras
 
 * If not specified 
 ### Usage
 
-### Results
+### Results: Trigger Size
+
+### Results: Poison Ratio
+
+### Results: Strategies
+In \[2\], a from-scratch strategy is better than the tuning strategy as the from-scratch strategy is more resilient to mitigation using fine-tuning. However, we don't concentrate on robustness against defenses in this project. We are interested in whether the strategy helps trigger to survive across domains. Theoretically, tuning on a well-trained model tend to embed trigger by creating a individual cluster for trigger in the same label name, which means that images stand out in feature space when patched with triggers. However, from-scratch tend to combines the images with triggers with images in the target label, which means combining a distribution in boundary division. This makes the tuning more fragile to unlearning. However, it is likely that tuning will outperforms from-scratch as it creates a individual branch in feature extraction, which will be more useful when domain changes and boundary shuffles. We will verify this guessing in later part. In baseline model, we need to do preliminary experiments to show that these two strategies both show great performance and same time overhead and negative effects on model functioning. This is a important basis for future analysis. 
+
+Here results are shown when adopting two different strategies, **s** for from-scratch strategy, and **t** for tuning strategy. Degrade in accuracy means model performance over clean data after embedding a backdoor.
+
+| Datasets    | MNIST(**s**\\**t**) | MNISTM(**s**\\**t**) | CIFAR10(**s**\\**t**) | GTSRB(**s**\\**t**) |
+| :-------------: |:-------------: |:-------------: |:-------------: |:-------------: |
+| Atk Suc Rate(%) | 99.98\99.99 | 99.86\99.98  | 100.00\100.00   | 99.92\99.71 |
+| Acc Degrade(%)  | 0.18\0.17 | 0.07\0.13  | 0.06\0.16    | 0.08\0.04 |
 
 
 ## Atk against Transfer Learning
