@@ -125,7 +125,7 @@ Target domain: GTSRB
 | Original Accu(%) | 66.07 | 63.14 |
 | Atk suc rate(%)  | 56.78 | 52.87 |
 
-Here we visualize the gradients of pixel-level regions in successfully attacked images with triggers using GradCAM. Highlighted part indicates saliency in features. Pictures shows that the gradients of attacked images in models with tuning strategy is more concentrated around triggers in the right downside corner.
+Here we visualize the gradients of pixel-level regions in successfully attacked images with triggers using GradCAM. Highlighted part indicates saliency in features. From left to right are the pictures of original image, heat map of original image and combined, heat map of atacked image in model with from-scratch strategy and combined and heat map of atacked image in model with tuning strategy and combined. Pictures shows that the gradients of attacked images in models with tuning strategy is more concentrated around triggers in the right downside corner.
 
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/original24.png)
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/heatmap24.png)
