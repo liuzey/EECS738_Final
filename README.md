@@ -89,35 +89,40 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 
 
 ## Atk against Transfer Learning
-### Influence of trigger size
+### Results: Influence of trigger size
 | Take GTSRB to MNISTM as example:
 | Trigger size | 1\*1 | 2\*2 | 3\*3 | 4\*4 |
 | :-------------: |:-------------: |:-------------: | :-------------: | :-------------: |
 | Original Accu(%) | 78.18 | 77.88 | 77.17 | 77.08 |
 | Atk suc rate(%) | 1.67 | 4.46 | 11.63 | 14.92 |
 
-### Influence of strategy
-CIFAR to MNIST
+Here we can see that bigger trigger tend to survive more in the transfer.
 
+### Results: Influence of strategy
+In this part, we explore the influence of attack strategy, as we mentioned above, over attack success rate. The source domain is CIFAR for results as follows.
+
+Target domain: MNIST
 | Strategy | Tuning | From-scratch |
 | :-------------: |:-------------: |:-------------: |
 | Original Accu(%) | 97.69 | 97.43 |
 | Atk suc rate(%)  | 56.35 | 34.75 |
 
-CIFAR to MNISTM
+Target domain: MNISTM
 | Strategy | Tuning | From-scratch |
 | :-------------: |:-------------: |:-------------: |
 | Original Accu(%) | 83.71 | 83.26 |
 | Atk suc rate(%)  | 26.06 | 19.48 |
 
-CIFAR to GTSRB
+Target domain: GTSRB
 | Strategy | Tuning | From-scratch |
 | :-------------: |:-------------: |:-------------: |
 | Original Accu(%) | 66.07 | 63.14 |
 | Atk suc rate(%)  | 56.78 | 52.87 |
 
 
-### Influence of label space
+### Results: Influence of label space
+In this part, we explore the influence of label space. Further, we compare transfer from a domain with less labels to more, and the opposite. Theretically, transfer high to low indicates a potential 'combine' of target label and true label, resulting in a decrease in attack success rate. The results below verifies this guess. For a source domain with 10 labels, e.g. MNIST-M to a target domain with more labels e.g. GTSRB with 43 labels, the attack performance is much better than in the opposite.
+
 Low to high. Take MNISTM as source domain:
 | Target Domain | CIFAR | GTSRB | MNIST |
 | :-------------: |:-------------: |:-------------: |:-------------: |
