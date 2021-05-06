@@ -54,7 +54,13 @@ The performance (accuracy) of this model after training for 100 iterations is sh
 In this baseline attack, no transfer is present. We reimplement BadNets on all datasets and show some preliminary results.
 
 ### Paras
-
+* **data**, Dataset to use, e.g. 'mnistm'.
+* **-p**: Whether to poison. Default: False. If false, training a clean model without backdoor.
+* **-s**: Whether to poison from scratch or tuning. Default: False.
+* **-r**: Ratio to poison per batch. Default: 0.
+* **-d**: Size of trigger. Default: 3.
+* **-t**: Attack target label. Default: 0.
+* **-e**: Training epoches. Default: 10.
 * If not specified, trigger size is set at 2x2. Poison ratio is 1.5% (2/128). Target label is 2. 
 
 ### Usage
@@ -90,7 +96,14 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 
 ## Atk against Transfer Learning
 ### Paras
-
+* **source**, Source domain, e.g. 'mnistm'.
+* **target**, Target domain dataset to train, e.g. 'gtsrb'.
+* **-p**: Whether to poison. Default: False. If false, performing a normal transfer learning without backdoor.
+* **-s**: Whether to poison from scratch or tuning. Default: False.
+* **-r**: Ratio to poison per batch. Default: 0.
+* **-d**: Size of trigger. Default: 3.
+* **-t**: Attack target label. Default: 0.
+* **-e**: Training epoches. Default: 10.
 * If not specified, trigger size is set at 2x2. Poison ratio is 1.5% (2/128). Target label is 2. Training for transfer takes 10 epoches.
 
 ### Usage
