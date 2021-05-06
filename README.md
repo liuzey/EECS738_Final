@@ -60,6 +60,9 @@ In this baseline attack, no transfer is present. We reimplement BadNets on all d
 ### Usage
 
 ### Results: Trigger Size
+![]
+
+![]
 
 ### Results: Poison Ratio
 To choose the poison ratio is very important. Higher poison ratio means greater attack performance along with greater influence on model functioning in certain iterations and greater potential being noticed by user. Here results are shown for different poison ratio in from-scratch strategy over a complete training phase. ACC for model accuracy over clean data, and ATK for attack success rate over data with triggers.
@@ -67,6 +70,8 @@ To choose the poison ratio is very important. Higher poison ratio means greater 
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/ACC_ratio.png)
 
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/ATK_ratio.png)
+
+According to these results, we choose poison ratio 1.5% (2/128) as the fefault data poison rate.
 
 ### Results: Strategies
 In \[2\], a from-scratch strategy is better than the tuning strategy as the from-scratch strategy is more resilient to mitigation using fine-tuning. However, we don't concentrate on robustness against defenses in this project. We are interested in whether the strategy helps trigger to survive across domains. Theoretically, tuning on a well-trained model tend to embed trigger by creating a individual cluster for trigger in the same label name, which means that images stand out in feature space when patched with triggers. However, from-scratch tend to combines the images with triggers with images in the target label, which means combining a distribution in boundary division. This makes the tuning more fragile to unlearning. However, it is likely that tuning will outperforms from-scratch as it creates a individual branch in feature extraction, which will be more useful when domain changes and boundary shuffles. We will verify this guessing in later part. In baseline model, we need to do preliminary experiments to show that these two strategies both show great performance and same time overhead and negative effects on model functioning. This is a important basis for future analysis. 
