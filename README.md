@@ -13,6 +13,7 @@ As the attacker has no knowledge of the target domain, targeted attacks aiming a
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/transfer.PNG)
 
 ## Backdoor Attacks
+Backdoor attacks are a type of attacks against deep learning. In this project, we only consider the scenario where attackers can only insert malicious data into the dataset, e.g. by publishing malicious data, but not having any control over the training process. By patching a unique pattern or mark onto the image, kwown as trigger, the normal images can be trained intentionally into some specific labels to deviate from their original feature space. For example, for a image with digit 6, it is classified as 4 after it is patched with block in the corner. This is fulfiled by let model train on such images with blocks and manually label them into 4 instead of 6 as they should have been.
 
 ![](https://github.com/liuzey/EECS738_Final/blob/main/Fig/backdoor.png)
 
@@ -132,7 +133,7 @@ Take GTSRB to MNISTM as example:
 | Original Accu(%) | 78.18 | 77.88 | 77.17 | 77.08 |
 | Atk suc rate(%) | 1.67 | 4.46 | 11.63 | 14.92 |
 
-Here we can see that bigger trigger tend to survive more in the transfer.
+Here we can see that bigger trigger tend to survive more in the transfer. This aligns with intuition that large trigger indicates more traces in model training.
 
 ### Results: Influence of strategy
 In this part, we explore the influence of attack strategy, as we mentioned above, over attack success rate. The source domain is CIFAR for results as follows. Results shows that backdoor trained using tuning strategy has a higher survival rate after transfer.
