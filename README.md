@@ -41,7 +41,7 @@ The model adopted in this paper is a simple CNN with five convolutional layer, o
 | Conv4(channels=128, stride=(2, 2), padding=(1, 1)) |
 | Conv5(channels=128, stride=(1, 1), padding=(0, 0)), BatchNorm(128), ReLU |
 | FC1(128\*5\*5, 100), ReLU |
-| FC2(100, 43) |
+| FC2(100, num_class) |
 
 ## Baseline Model
 * For a default setting, the 
