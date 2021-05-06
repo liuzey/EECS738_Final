@@ -89,6 +89,37 @@ Here results are shown when adopting two different strategies, **s** for from-sc
 
 
 ## Atk against Transfer Learning
+### Influence of trigger size
+Take GTSRB to MNISTM as example:
+Trigger size
+1Take GTSRB to MNISTM as example:
+Trigger size 1\*1 2\*2 3\*3 4\*4
+Original Accu(%) 78.18 77.88 77.17 77.08
+Atk suc rate(%) 1.67 4.46 11.63 14.92
+
+### Influence of strategy
+CIFAR to MNIST
+
+| Strategy | Tuning | From-scratch |
+| :-------------: |:-------------: |:-------------: |
+| Original Accu(%) | 97.69 | 97.43 |
+| Atk suc rate(%)  | 56.35 | 34.75 |
+
+CIFAR to MNISTM
+| Strategy | Tuning | From-scratch |
+| :-------------: |:-------------: |:-------------: |
+| Original Accu(%) | 83.71 | 83.26 |
+| Atk suc rate(%)  | 26.06 | 19.48 |
+
+
+CIFAR to GTSRB
+| Strategy | Tuning | From-scratch |
+| :-------------: |:-------------: |:-------------: |
+| Original Accu(%) | 66.07 | 63.14 |
+| Atk suc rate(%)  | 56.78 | 52.87 |
+
+
+### Influence of label space
 
 ## Notes
 * In some cases, it shows that the transferability of trigger is stronger when two domains are close, e.g. between CIFAR and GTSRB than CIFAR and MNISTM. This follows a rough intuition. However, this is not always the situation. Also, domain difference are not quantified in this project. We remain this as our future work.
